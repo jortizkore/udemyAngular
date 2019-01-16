@@ -1,0 +1,4 @@
+<h3>This is the products component</h3>
+<input type="text" [(ngModel)]="productName" #textBox> 
+<button *ngIf="textBox.value !== ''" (click)="addProduct()">add this product</button>
+<app-product *ngFor="let p of productList" [productName] = "p" (whenClick)="deleteProduct(p)"></app-product>
